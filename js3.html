@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="js3.js">
+    <link rel="stylesheet" href="js3.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Multiplication Table Generator</h1>
+        <input type="text" placeholder="input" id="inp1" required>
+        <input type="text" placeholder="range" id="inp2" required>
+    
+        <button type="button">Generate table</button>
+        <h2 id="out"></h2>
+    </div>
+
+    <script>
+     let button = document.querySelector("button")
+    button.addEventListener("click",function(){
+          let input1 = document.querySelector("#inp1").value
+          let input2 = document.querySelector("#inp2").value
+          let output = document.getElementById("out")
+          if (isNaN(input1) || isNaN(input2)) {
+              document.getElementById('out').innerText = 'Please enter a valid number';
+              return;
+            }
+            if(input1==="" || input2===""){
+                document.getElementById('out').innerText = 'Please enter a valid number';
+                return;
+            }
+          output.innerHTML = ""
+             let a=input1
+                for(let b=1;b<=input2;b++){
+                      let c = b*a;
+                      output.innerHTML += `${a}*${b}=${c}`
+                      output.innerHTML += "<br>"
+                     }
+                    })
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+<!-- /*         for( i=0;i<=6;i++){
+    console.log(i)
+}
+let b =1
+do{
+    console.log(b)
+    b++
+}while(b<=5)
+let a=5
+for(let b=1; b<=10; b++){
+    let c = b*a
+    console.log(a+"*"+b+"="+c)
+} */ -->
